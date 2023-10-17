@@ -4,8 +4,9 @@ import App from './App.jsx';
 import './index.css';
 import { UmbracoProvider } from "~/contexts/Umbraco";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <UmbracoProvider>
+const rootDiv = document.getElementById('root');
+ReactDOM.createRoot(rootDiv).render(
+  <UmbracoProvider dataset={rootDiv.dataset}>
     <App />
   </UmbracoProvider>,
 );

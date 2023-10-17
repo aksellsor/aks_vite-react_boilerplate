@@ -1,9 +1,17 @@
-# React + Vite
+# vite.config.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- File is used to configure proxies and output dir
 
-Currently, two official plugins are available:
+# index.html
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# aks_vite-react_boilerplate
+- set `data-node-id="1"` for root div, used in fetch
+
+# Context
+
+- Folder is used to get data from Umbraco
+
+# Running project
+
+1. `yarn` or `npm i`
+2. `yarn dev` or `npm run dev`
+3. Open `http://localhost:1337/`

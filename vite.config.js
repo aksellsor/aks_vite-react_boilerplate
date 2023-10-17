@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
@@ -17,15 +17,17 @@ export default defineConfig({
   server: {
     port: 1337,
     proxy: {
-      '/headless': {
-        target: 'https://sorsport.no',
+      '^/headless/.*': {
+        target: 'https://jsonplaceholder.typicode.com/photos/',
         changeOrigin: true,
         secure: true,
+        rewrite: (path) => path.replace(/^\/headless/, ''),
       },
-      '/media': {
-        target: 'https://sorsport.no',
+      '^/media/.*': {
+        target: 'https://via.placeholder.com/',
         changeOrigin: true,
         secure: true,
+        rewrite: (path) => path.replace(/^\/media/, ''),
       },
     },
   },
